@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<style type="text/css">
+		.shooter {
+			width: 80px; 
+			position: absolute; 
+			left: 600px;	
+		}
+		.box {
+			background-image: url(game.png);
+			height: 1000px; 
+			background-size: 100% 100%;
+		}
+		.zombies {
+			width: 80px; 
+			position: absolute;
+			left: 1500px;
+			transition: 1s;
+		}
+	</style>
+</head>
+<body>	
+	
+	<div class="box" style="">
+		
+		<h5 style="position: absolute; left: 800px; top: 50px" class="score">Score: <span class="viewScore"></span></h5>
+
+		<!--ГОРОХИ-->
+	    <img class="shooter" src="peashooter.png"  style="top: 290px; ">		
+		<img class="shooter" src="peashooter.png"  style="top: 410px; ">	
+		<img class="shooter" src="peashooter.png"  style="top: 550px; ">	
+		<img class="shooter" src="peashooter.png"  style="top: 670px; ">
+		<img class="shooter" src="peashooter.png"  style="top: 800px; ">
+
+
+		<!--ЗОМБИ-->
+		<img class="zombies" src="zombie1.png" style="top: 250px">
+		<img class="zombies" src="zombie2.png" style="top: 360px">
+		<img class="zombies" src="zombie2.png" style="top: 480px">
+		<img class="zombies" src="zombie4.png" style="top: 610px">
+		<img class="zombies" src="zombie4.png" style="top: 750px">
+	</div>
+<script>
+	let score = 0
+	document.querySelector(".viewScore").innerHTML = score
+	let zombie0_left = 1500
+	let zombie1_left = 1500
+	let zombie2_left = 1500
+	let zombie3_left = 1500
+	let zombie4_left = 1500
+	let shooters = document.querySelectorAll(".shooter")
+	let zombies = document.querySelectorAll(".zombies")
+
+	zombies[0].onclick = function(){
+		zombie0_left = zombie0_left - 100
+		zombies[0].style.left = zombie0_left + "px"
+		if(zombie0_left == 600){
+			alert("Горох съеден");
+			score = score + 1
+			document.querySelector(".viewScore").innerHTML = score
+			shooters[0].style.display = "none"
+		}
+		if(score == 5){
+			alert("Ты выиграл!")
+			zombies[0].style.display = "none"
+			zombies[1].style.display = "none"
+			zombies[2].style.display = "none"
+			zombies[3].style.display = "none"
+			zombies[4].style.display = "none"
+		}
+	}
+	zombies[1].onclick = function(){
+		zombie1_left = zombie1_left - 100
+		zombies[1].style.left = zombie1_left + "px"
+		if(zombie1_left == 600){
+			alert("Горох съеден");
+			score = score + 1
+			document.querySelector(".viewScore").innerHTML = score
+			shooters[1].style.display = "none"
+		}
+		if(score == 5){
+			alert("Ты выиграл!")
+			zombies[1].style.display = "none"
+			zombies[0].style.display = "none"
+			zombies[2].style.display = "none"
+			zombies[3].style.display = "none"
+			zombies[4].style.display = "none"
+		}
+	}
+	zombies[2].onclick = function(){ 
+		zombie2_left = zombie2_left - 100
+		zombies[2].style.left = zombie2_left + "px"
+		if(zombie2_left == 600){
+			alert("Горох съеден");
+			score = score + 1
+			document.querySelector(".viewScore").innerHTML = score
+			shooters[2].style.display = "none"
+		}
+		if(score == 5){
+			alert("Ты выиграл!")
+			zombies[2].style.display = "none"
+			zombies[1].style.display = "none"
+			zombies[0].style.display = "none"
+			zombies[3].style.display = "none"
+			zombies[4].style.display = "none"
+
+		}
+	}
+	zombies[3].onclick = function(){
+		zombie3_left = zombie3_left - 100
+		zombies[3].style.left = zombie3_left + "px"
+		if(zombie3_left == 600){
+			alert("Горох съеден");
+			score = score + 1
+			document.querySelector(".viewScore").innerHTML = score
+			shooters[3].style.display = "none"
+		}
+		if(score == 5){
+			alert("Ты выиграл!")
+			zombies[3].style.display = "none"
+			zombies[1].style.display = "none"
+			zombies[0].style.display = "none"
+			zombies[2].style.display = "none"
+			zombies[4].style.display = "none"
+		}
+	}
+	zombies[4].onclick = function(){
+		zombie4_left = zombie4_left - 100
+		zombies[4].style.left = zombie4_left + "px"
+		if(zombie4_left == 600){
+			alert("Горох съеден");
+			score = score + 1
+			document.querySelector(".viewScore").innerHTML = score
+			shooters[4].style.display = "none"
+		}
+		if(score == 5){
+			alert("Ты выиграл!")
+			zombies[4].style.display = "none"
+			zombies[1].style.display = "none"
+			zombies[0].style.display = "none"
+			zombies[2].style.display = "none"
+			zombies[3].style.display = "none"
+		}
+
+	}
+		
+
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            height: 100px;
+            width: 100px;
+            background-color: green;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+
+    <script>
+        let reds = document.querySelectorAll(".box");//массив
+        let array = [25, "prosto text", 30, "eche text"]
+        alert(array[1])
+
+        reds[0].onclick = function(){
+            alert("нажат")
+        }
+        reds[1].onclick = function(){
+            alert("нажат")
+        }
+        reds[2].onclick = function(){
+            alert("нажат")
+        }
+        reds[3].onclick = function(){
+            alert("нажат")
+        }
+        reds[4].onclick = function(){
+            alert("нажат")
+        }
+
+    </script>
+</body>
+</html>
